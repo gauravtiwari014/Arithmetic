@@ -1,0 +1,39 @@
+public class ArithmeticExceptionSample {
+	
+	public void divideByZero(int x,int y)
+	{
+		int result=0;
+		System.out.println("We are about to divide x by y");
+	/*	*/try
+		{ 
+			result = x / y;
+		}
+		catch(ArithmeticException ae)
+		{
+			ae.printStackTrace();
+		}/**/
+		System.out.println("The Dividend is "+result);
+		System.out.println("We finished Division...");
+	}
+
+	public static void main(String[] args)
+	{
+		System.out.println("Invoking Divide By Zero...");
+		ArithmeticExceptionSample aes = new ArithmeticExceptionSample();
+/*	try
+	{ */
+		aes.divideByZero(100, 2);
+		aes.divideByZero(100, 4);
+		aes.divideByZero(100, 0);
+		aes.divideByZero(100, 25);
+		aes.divideByZero(100, 50);
+/*	}
+	catch(ArithmeticException ae)
+	{
+		ae.printStackTrace();
+	}*/
+		System.out.println("Completing Divide By Zero Call..");
+		
+	}
+}
+
